@@ -1,37 +1,46 @@
-﻿  BatchRenderer.cpp
+﻿  Window.cpp
+  Transform.cpp
+  BatchRenderer.cpp
+  Blender.cpp
+  Framebuffer.cpp
+  IndexBuffer.cpp
   Renderer.cpp
+  Shader.cpp
+  Test.cpp
   Texture.cpp
   VertexArray.cpp
-C:\Projects\LexBrush\LexBrush\src\Lex\VertexArray.cpp(37,117): warning C4312: 'type cast': conversion from 'unsigned int' to 'const void *' of greater size
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(58,30): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
+  VertexBuffer.cpp
+  VertexBufferLayout.cpp
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(58,30): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(59,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(59,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(60,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(60,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(61,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(61,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(62,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(62,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(63,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(63,31): warning C4267: '=': conversion from 'size_t' to '_Ty', possible loss of data
           with
           [
               _Ty=unsigned int
           ]
-C:\Projects\LexBrush\LexBrush\src\Lex\BatchRenderer.cpp(68,59): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\BatchRenderer.cpp(68,59): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Projects\LexBrush\LexBrush\src\Lex\Renderer\VertexArray.cpp(37,117): warning C4312: 'type cast': conversion from 'unsigned int' to 'const void *' of greater size
   LexBrush.vcxproj -> C:\Projects\LexBrush\LexBrush\..\bin\Debug-windows-x86_64\LexBrush\LexBrush.lib

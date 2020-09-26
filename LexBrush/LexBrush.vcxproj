@@ -99,16 +99,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Lex.h" />
-    <ClInclude Include="src\Lex\BatchRenderer.h" />
-    <ClInclude Include="src\Lex\Blender.h" />
-    <ClInclude Include="src\Lex\IndexBuffer.h" />
-    <ClInclude Include="src\Lex\Renderer.h" />
-    <ClInclude Include="src\Lex\Shader.h" />
-    <ClInclude Include="src\Lex\Test.h" />
-    <ClInclude Include="src\Lex\Texture.h" />
-    <ClInclude Include="src\Lex\VertexArray.h" />
-    <ClInclude Include="src\Lex\VertexBuffer.h" />
-    <ClInclude Include="src\Lex\VertexBufferLayout.h" />
+    <ClInclude Include="src\Lex\Core\KeyCodes.h" />
+    <ClInclude Include="src\Lex\Core\Window.h" />
+    <ClInclude Include="src\Lex\Physics\Transform.h" />
+    <ClInclude Include="src\Lex\Renderer\BatchRenderer.h" />
+    <ClInclude Include="src\Lex\Renderer\Blender.h" />
+    <ClInclude Include="src\Lex\Renderer\Framebuffer.h" />
+    <ClInclude Include="src\Lex\Renderer\IndexBuffer.h" />
+    <ClInclude Include="src\Lex\Renderer\Renderer.h" />
+    <ClInclude Include="src\Lex\Renderer\Shader.h" />
+    <ClInclude Include="src\Lex\Renderer\Test.h" />
+    <ClInclude Include="src\Lex\Renderer\Texture.h" />
+    <ClInclude Include="src\Lex\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Lex\Renderer\VertexBuffer.h" />
+    <ClInclude Include="src\Lex\Renderer\VertexBufferLayout.h" />
     <ClInclude Include="src\lbpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
@@ -475,16 +479,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Lex\BatchRenderer.cpp" />
-    <ClCompile Include="src\Lex\Blender.cpp" />
-    <ClCompile Include="src\Lex\IndexBuffer.cpp" />
-    <ClCompile Include="src\Lex\Renderer.cpp" />
-    <ClCompile Include="src\Lex\Shader.cpp" />
-    <ClCompile Include="src\Lex\Test.cpp" />
-    <ClCompile Include="src\Lex\Texture.cpp" />
-    <ClCompile Include="src\Lex\VertexArray.cpp" />
-    <ClCompile Include="src\Lex\VertexBuffer.cpp" />
-    <ClCompile Include="src\Lex\VertexBufferLayout.cpp" />
+    <ClCompile Include="src\Lex\Core\Window.cpp" />
+    <ClCompile Include="src\Lex\Physics\Transform.cpp" />
+    <ClCompile Include="src\Lex\Renderer\BatchRenderer.cpp" />
+    <ClCompile Include="src\Lex\Renderer\Blender.cpp" />
+    <ClCompile Include="src\Lex\Renderer\Framebuffer.cpp" />
+    <ClCompile Include="src\Lex\Renderer\IndexBuffer.cpp" />
+    <ClCompile Include="src\Lex\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Lex\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Lex\Renderer\Test.cpp" />
+    <ClCompile Include="src\Lex\Renderer\Texture.cpp" />
+    <ClCompile Include="src\Lex\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Lex\Renderer\VertexBuffer.cpp" />
+    <ClCompile Include="src\Lex\Renderer\VertexBufferLayout.cpp" />
     <ClCompile Include="src\lbpch.cpp" />
     <ClCompile Include="vendor\stb_image\stb_image.cpp" />
   </ItemGroup>

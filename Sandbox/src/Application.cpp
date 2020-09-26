@@ -1,18 +1,20 @@
 #include "Lex.h"
 #include <iostream>
-
+#include <functional>
 #include <GLFW/include/GLFW/glfw3.h>
 
-#include "Lex/Renderer.h"
-#include "Lex/VertexBuffer.h"
-#include "Lex/VertexBufferLayout.h"
-#include "Lex/IndexBuffer.h"
-#include "Lex/VertexArray.h"
-#include "Lex/Shader.h"
-#include "Lex/Texture.h"
-#include "Lex/Blender.h"
+#include "Lex/Renderer/Renderer.h"
+#include "Lex/Renderer/VertexBuffer.h"
+#include "Lex/Renderer/VertexBufferLayout.h"
+#include "Lex/Renderer/IndexBuffer.h"
+#include "Lex/Renderer/VertexArray.h"
+#include "Lex/Renderer/Shader.h"
+#include "Lex/Renderer/Texture.h"
+#include "Lex/Renderer/Blender.h"
+#include "Lex/Renderer/Framebuffer.h"
+#include "Lex/Renderer/BatchRenderer.h"
 
-#include "Lex/BatchRenderer.h"
+#include "Lex/Core/Window.h"
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
@@ -26,32 +28,14 @@ enum Color
     Alpha
 };
 
-
 int main(void)
 {
-  
-    GLFWwindow* window;
+    LexBrush::Window window({});
 
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
-
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(960, 540, "LexBrush", NULL, NULL);
-    if (!window)
-    {
-        glfwTerminate();
-        return -1;
-    }
-
-    /* Make the window's context current */
-    glfwMakeContextCurrent(window);
-
-    LexBrush::InitGlad();
+    window.SetWindowResizeCallback([&](int width, int height) {
+        LexBrush::Renderer::SetViewport(0, 0, width, height);
+        std::cout << "Resized" << std::endl;
+     });
 
     float positions[] = {
         -50.0f, -50.0f, 0.0f, 0.0f,   //0
@@ -99,8 +83,6 @@ int main(void)
     texture.Bind();
     shader.SetUniform1i("u_Texture", 0);
 
-    LexBrush::Renderer renderer;
-
     glm::vec3 translationA(200, 200, 0);
     glm::vec3 translationB(400, 200, 0);
 
@@ -109,50 +91,43 @@ int main(void)
     float uniformFloats[4] = { 0.0f, 0.3f, 0.8f, 1.0f }; //COPIED TO RENDERER.CPP
     float increment = 0.05f;
 
-    glm::mat4 testTransform = glm::translate(glm::mat4(1.0f), glm::vec3(5, 5, 0));
+    glm::mat4 testTransform = glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, 0)) * glm::scale(glm::mat4(1.0f), glm::vec3(15,11,1)); 
+    glm::mat4 testTransform2 = glm::translate(glm::mat4(1.0f), glm::vec3(-10, 4, 0)) * glm::scale(glm::mat4(1.0f), glm::vec3(4, 4, 1));
+
+    LexBrush::FramebufferSpecification fbSpec;
+    fbSpec.Width = 960;
+    fbSpec.Height = 540;
+    LexBrush::Framebuffer m_Framebuffer(fbSpec);
 
     /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
+    while (!window.IsClosed())
     {
         /* Render here */
-        renderer.Clear();
-        
+        LexBrush::Renderer::ClearColor({ 0,1,1,1 });
+        LexBrush::Renderer::Clear();
+        m_Framebuffer.Bind();
+        LexBrush::Renderer::ClearColor({ 1,1,1,1 });
+        LexBrush::Renderer::Clear();
 
+        texture.Bind();
         LexBrush::BatchRenderer::Submit(testTransform);
+        LexBrush::BatchRenderer::Submit(testTransform2);
         {
             glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(translationA));
-            glm::mat4 mvp = proj * view * model;
+            glm::mat4 mvp = proj * view;
             shader.BindShader();
             shader.SetUniformMat4f("u_MVP", mvp);
             LexBrush::BatchRenderer::Flush();
+
+            m_Framebuffer.Unbind();
         }
+        LexBrush::Texture::Bind(m_Framebuffer.GetColorAttachment(), 0);
+        LexBrush::BatchRenderer::Submit(testTransform);
         
-        shader.SetUniform4f("u_Color", uniformFloats);
-        
-        {
-            glm::mat4 model = glm::translate(glm::mat4(1.0f), glm::vec3(translationB));
-            glm::mat4 mvp = proj * view * model;
-            shader.BindShader();
-            shader.SetUniformMat4f("u_MVP", mvp);
+        LexBrush::BatchRenderer::Flush();
 
-            //renderer.Draw(vertexAr, ibo, shader);
-        }
-
-        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-
-        if (uniformFloats[Red] > 1.0f)
-            increment = -0.05f;
-        else if (uniformFloats[Red] < 0.0f)
-            increment = 0.05f;
-        uniformFloats[Red] += increment;
-
-        /* Swap front and back buffers */
-        glfwSwapBuffers(window);
-
-        /* Poll for and process events */
-        glfwPollEvents();
+        window.OnUpdate();
     }
 
-    glfwTerminate();
     return 0;
 }

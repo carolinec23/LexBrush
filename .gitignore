@@ -339,18 +339,18 @@ ASALocalRun
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-Engine.sln
+LexBrush.sln
 bin-intDebug-windows-x86_64
 bin-intRelease-windows-x86_64
-EngineEngine.vcxproj
-EngineEngine.vcxproj.filters
-SandboxSandbox.vcxproj
+LexBrush.vcxproj
+LexBrush.vcxproj.filters
+Sandbox.vcxproj
 Sandboxresults.json
 SandboxLog.txt
 ZSandboxresults.json
 ZSandboxLog.txt
 .sln
 .vcxproj
-XYZ_EngineXYZ_Engine.vcxproj.filters
-XYZ_Enginevendorimguibin-intRelease-windows-x86_64ImGui
+LexBrush.vcxproj.filters
+LexBrushvendorimguibin-intRelease-windows-x86_64ImGui
 ZSandboxZSandbox.vcxproj.filters

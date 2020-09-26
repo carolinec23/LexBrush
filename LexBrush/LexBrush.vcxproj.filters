@@ -7,6 +7,15 @@
     <Filter Include="src\Lex">
       <UniqueIdentifier>{45902FA9-B16F-AE44-BA87-391B26E614A6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lex\Core">
+      <UniqueIdentifier>{BDA7D649-A90A-66EE-5290-9EA43ED23171}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lex\Physics">
+      <UniqueIdentifier>{B708FA36-2394-67FB-2CA5-EAEF98AFC3FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Lex\Renderer">
+      <UniqueIdentifier>{8BF115ED-77EA-343F-A01C-1AC48C74144B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
     </Filter>
@@ -36,32 +45,47 @@
     <ClInclude Include="src\Lex.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\Blender.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Core\KeyCodes.h">
+      <Filter>src\Lex\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\IndexBuffer.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Core\Window.h">
+      <Filter>src\Lex\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\Renderer.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Physics\Transform.h">
+      <Filter>src\Lex\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\Shader.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Renderer\BatchRenderer.h">
+      <Filter>src\Lex\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\Test.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Renderer\Blender.h">
+      <Filter>src\Lex\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\Texture.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Renderer\Framebuffer.h">
+      <Filter>src\Lex\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\VertexArray.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Renderer\IndexBuffer.h">
+      <Filter>src\Lex\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\VertexBuffer.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Renderer\Renderer.h">
+      <Filter>src\Lex\Renderer</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\VertexBufferLayout.h">
-      <Filter>src\Lex</Filter>
+    <ClInclude Include="src\Lex\Renderer\Shader.h">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lex\Renderer\Test.h">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lex\Renderer\Texture.h">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lex\Renderer\VertexArray.h">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lex\Renderer\VertexBuffer.h">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lex\Renderer\VertexBufferLayout.h">
+      <Filter>src\Lex\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\lbpch.h">
       <Filter>src</Filter>
@@ -1155,35 +1179,46 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Lex\BatchRenderer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Lex\Blender.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Core\Window.cpp">
+      <Filter>src\Lex\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\IndexBuffer.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Physics\Transform.cpp">
+      <Filter>src\Lex\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\Renderer.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\BatchRenderer.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\Shader.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\Blender.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\Test.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\Framebuffer.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\Texture.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\IndexBuffer.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\VertexArray.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\Renderer.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\VertexBuffer.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\Shader.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\VertexBufferLayout.cpp">
-      <Filter>src\Lex</Filter>
+    <ClCompile Include="src\Lex\Renderer\Test.cpp">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lex\Renderer\Texture.cpp">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lex\Renderer\VertexArray.cpp">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lex\Renderer\VertexBuffer.cpp">
+      <Filter>src\Lex\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lex\Renderer\VertexBufferLayout.cpp">
+      <Filter>src\Lex\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\lbpch.cpp">
       <Filter>src</Filter>
@@ -1191,6 +1226,5 @@
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
     </ClCompile>
-    <ClCompile Include="src\Lex\BatchRenderer.cpp" />
   </ItemGroup>
 </Project>
