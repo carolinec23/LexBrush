@@ -1,0 +1,2 @@
+C:\Projects\LexBrush\LexBrush\vendor\Glad\bin\Debug-windows-x86_64\Glad\Glad.pdb
+C:\Projects\LexBrush\LexBrush\vendor\Glad\bin-int\Debug-windows-x86_64\Glad\Glad.pdb

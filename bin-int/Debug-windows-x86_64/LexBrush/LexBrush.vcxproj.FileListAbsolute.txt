@@ -1,0 +1,2 @@
+C:\Projects\LexBrush\bin\Debug-windows-x86_64\LexBrush\LexBrush.pdb
+C:\Projects\LexBrush\bin-int\Debug-windows-x86_64\LexBrush\LexBrush.pdb
