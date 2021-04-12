@@ -1,2 +1,4 @@
 # LexBrush
-Painting and stuff
+### (work in progress)
+
+Mockup of a paint app.
